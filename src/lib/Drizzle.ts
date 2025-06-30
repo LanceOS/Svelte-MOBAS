@@ -1,3 +1,4 @@
+import { PRIVATE_POSTGRES_DB, PRIVATE_POSTGRES_PASSWORD, PRIVATE_POSTGRES_URL, PRIVATE_POSTGRES_USER } from "$env/static/private";
 import { drizzle } from "drizzle-orm/node-postgres";
 import { Pool } from "pg";
 
