@@ -3,11 +3,13 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { DrizzleDB } from "./Drizzle.js";
 import { PUBLIC_URL } from "$env/static/public";
 
+import * as authentication from "./schemas/authentication.js"
+
 
 export const auth = betterAuth({
     database: drizzleAdapter(DrizzleDB, {
         provider: "pg",
-        schema: schema
+        schema: authentication
     }),
     session: {
         expiresIn: 60 * 60 * 24 * 7, // 7 days

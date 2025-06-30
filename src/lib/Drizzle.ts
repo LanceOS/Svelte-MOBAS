@@ -2,9 +2,14 @@ import { PRIVATE_POSTGRES_DB, PRIVATE_POSTGRES_PASSWORD, PRIVATE_POSTGRES_URL, P
 import { drizzle } from "drizzle-orm/node-postgres";
 import { Pool } from "pg";
 
+import * as authentication from "./schemas/authentication";
+import * as example from "./schemas/example";
+import * as exampleTwo from "./schemas/exampleTwo";
+import * as relations from "./schemas/relations";
+
+
+
 const databaseUrl = `postgresql://${PRIVATE_POSTGRES_USER}:${PRIVATE_POSTGRES_PASSWORD}@${PRIVATE_POSTGRES_URL}/${PRIVATE_POSTGRES_DB}`;
-
-
 const pool = new Pool({
     connectionString: databaseUrl,
 
@@ -27,7 +32,10 @@ async function testConnection() {
 testConnection()
 
 const schemas = {
-
+    ...authentication,
+    ...example,
+    ...exampleTwo,
+    ...relations
 }
 
 
