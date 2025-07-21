@@ -6,7 +6,7 @@
  * and types for managing user authentication and sessions in your frontend.
  *
  * For detailed API usage and configuration options, please refer to the
- * [better-auth Svelte Client documentation](https://better-auth.dev/docs/client/svelte-client).
+ * [better-auth Svelte Client documentation](https://www.better-auth.com/docs/integrations/svelte-kit).
  */
 
 // Core imports for the better-auth Svelte client and necessary plugins.
