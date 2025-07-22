@@ -31,10 +31,12 @@ Postgres and PgAdmin should already be ready to use. This application uses Drizz
 To set your better auth secret go to https://www.better-auth.com/docs/installation to generate a secret. Once generated copy and paste it into your `.env` file.
 
 ### [Drizzle-Kit](https://orm.drizzle.team/docs/overview)
-This project utilizes Drizzle-Kit for database schema management and migrations. After making changes to your Drizzle schemas (defined in `src/lib/server/schemas/`), you will use Drizzle-Kit CLI commands to generate and apply migrations to your database.
+This project utilizes Drizzle-Kit for database schema management and migrations. After making changes to your Drizzle schemas (defined in `src/lib/server/schemas/`), you will use Drizzle-Kit CLI commands to generate and apply migrations to your database.<br />
+`npx drizzle-kit generate` to generate migrations and then `npx drizzle-kit migrate` to apply those migrations to your database. For more in depth commands consolidate the Drizzle documentation.
 
 **Note on Example Schemas:**
 The file `src/lib/server/schemas/example.ts` (along with its corresponding entries in `src/lib/server/schemas/relations.ts`) is provided as an example of how to define your database models. You can safely remove or modify this file to fit your application's specific data requirements.
+
 
 # Congratulations!
 **Congratulations!** You have successfully set up the Svelte-PMB boilerplate! Now you can get started with your full stack Sveltekit application.
