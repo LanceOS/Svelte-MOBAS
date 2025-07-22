@@ -1,4 +1,4 @@
-# Welcome to Svelte-PMB (Postgres, MinIO, Better-Auth)
+# Welcome to Svelte-MOBAS (MinIO, ORM (Drizzle), Better-Auth, SQL (Postgres)
 **This** is a boilerplate designed **to** get you started with this stack as easily as possible by comprehensive documentation and minimal code.
 
 ## Prerequisites
