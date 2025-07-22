@@ -1,7 +1,7 @@
 /**
  * @file Database Connection and Drizzle ORM Setup
  * @description
- * This file is responsible for establishing the connection to your PostgreSQL database
+ * This file is responsible for establishing the connection to the PostgreSQL database
  * and initializing the Drizzle ORM client. It securely retrieves database credentials
  * from private environment variables, sets up a robust connection pool for efficient
  * database interactions, and loads all defined database schemas.
@@ -19,10 +19,9 @@ import { drizzle } from "drizzle-orm/node-postgres";
 import { Pool } from "pg";
 
 // Import all defined database schema files.
-// These files contain the Drizzle ORM definitions for your database tables and relationships.
+// These files contain the Drizzle ORM definitions for the database tables and relationships.
 import * as authentication from "./server/schemas/authentication";
 import * as example from "./server/schemas/example";
-import * as exampleTwo from "./server/schemas/exampleTwo";
 import * as relations from "./server/schemas/relations";
 
 /**
@@ -80,12 +79,14 @@ testConnection();
  * @description
  * An aggregated object containing all Drizzle ORM schema definitions imported from
  * various schema files. This combined schema object is passed to the Drizzle client
- * so it understands the full structure of your database.
+ * so it understands the full structure of the database.
+ * 
+ * @note If the amount of schema's in for your database becomes large you can move your
+ * schemas to a "barrel" file. Learn more about barrels here at https://basarat.gitbook.io/typescript/main-1/barrel.
  */
 const schemas = {
     ...authentication, // Includes all table and relation schemas from 'authentication.ts'.
     ...example,         // Includes all table and relation schemas from 'example.ts'.
-    ...exampleTwo,      // Includes all table and relation schemas from 'exampleTwo.ts'.
     ...relations        // Includes all table and relation schemas from 'relations.ts'.
 };
 
@@ -93,7 +94,7 @@ const schemas = {
  * @constant {ReturnType<typeof drizzle>} DrizzleDB
  * @description
  * The main Drizzle ORM database client instance. This is the primary export
- * from this file and should be used throughout your application to perform
+ * from this file and should be used throughout the application to perform
  * all database operations (e.g., querying, inserting, updating, deleting data).
  * It's configured with the connection pool and the combined database schemas.
  */

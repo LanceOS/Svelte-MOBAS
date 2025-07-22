@@ -3,10 +3,10 @@
  * @description
  * This file defines the explicit relationships between different database schemas (tables)
  * using Drizzle ORM's `relations` function. These definitions enable Drizzle to understand
- * the structural connections between your data models and facilitate advanced querying,
+ * the structural connections between the data models and facilitate advanced querying,
  * such as eager loading related entities.
  *
- * For a comprehensive guide to Drizzle relations, consult the
+ * @note For a comprehensive guide to Drizzle relations, consult the
  * [Drizzle ORM Relations documentation](https://orm.drizzle.team/docs/relations).
  */
 
@@ -15,31 +15,6 @@ import { relations } from "drizzle-orm";
 // Import individual schema definitions that participate in relationships.
 import { user } from "./authentication";
 import { example } from "./example";
-import { exampleTwo } from "./exampleTwo";
-
-/**
- * @constant {ReturnType<typeof relations>} userRelations
- * @description
- * Defines relationships originating from the `user` schema.
- *
- * @property {object} example - A one-to-one relationship indicating that a `user`
- * is associated with a single `example` entry.
- * @property {object} exampleTwo - A one-to-many relationship indicating that a `user`
- * can be associated with multiple `exampleTwo` entries.
- * @property {object} exampleTwoRelates - An additional one-to-many relationship to `exampleTwo`,
- * distinguished by a `relationName`. This is used when multiple distinct relationships
- * exist between the same two schemas.
- * @property {object} exampleTwoRelates.options
- * @property {string} exampleTwoRelates.options.relationName - A unique identifier for this specific relationship.
- */
-export const userRelations = relations(user, ({ many, one }) => ({
-    example: one(example),
-    exampleTwo: many(exampleTwo),
-
-    exampleTwoRelates: many(exampleTwo, {
-        relationName: "example_two_relations"
-    })
-}));
 
 /**
  * @constant {ReturnType<typeof relations>} exampleRelations

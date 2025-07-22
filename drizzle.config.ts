@@ -2,8 +2,8 @@
  * @file Drizzle-Kit Configuration File
  * @description
  * This file configures Drizzle-Kit, a tool used for working with the Drizzle ORM.
- * It defines where Drizzle-Kit should find your database schema,
- * where to output generated migrations, and how to connect to your PostgreSQL database.
+ * It defines where Drizzle-Kit should find the database schema,
+ * where to output generated migrations, and how to connect to the PostgreSQL database.
  *
  * It uses environment variables (loaded via 'dotenv/config') for sensitive database credentials,
  * promoting secure and flexible deployment.
@@ -42,7 +42,7 @@ const databaseUrl = `postgresql://${process.env.PRIVATE_POSTGRES_USER!}:${proces
  *
  * @property {string} out - Specifies the output directory for generated Drizzle migrations.
  * Migrations will be stored in the './drizzle' folder.
- * @property {string} schema - Defines the path to your Drizzle ORM schema files.
+ * @property {string} schema - Defines the path to the Drizzle ORM schema files.
  * Drizzle-Kit will look for schema definitions in all TypeScript files
  * within the './src/lib/server/schemas/' directory.
  * @property {'postgresql'} dialect - Specifies the database dialect being used.
