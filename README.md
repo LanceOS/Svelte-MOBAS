@@ -33,7 +33,7 @@ Postgres and PgAdmin should already be ready to use. This boilerplate leverages 
 PgAdmin is purely optional and can be removed from your docker-compose.yml file if you prefer not to use it. If you wish to use PgAdmin:
 1. Access it by going to http://localhost:5050.
 2. Log in with the credentials set in your `.env` file.
-3. Once logged in, connect to your Postgres database by going to "Add Server" and entering the database access credentials from your .env file.
+3. Once logged in, connect to your Postgres database by going to "Add Server" and entering the database access credentials from your `.env` file.
 
 
 
@@ -51,3 +51,4 @@ The file `src/lib/server/schemas/example.ts` (along with its corresponding entri
 
 # Congratulations!
 **Congratulations!** You have successfully set up the Svelte-PMB boilerplate! Now you can get started with your full stack Sveltekit application.
+
